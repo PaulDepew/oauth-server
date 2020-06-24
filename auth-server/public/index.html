@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Auth Test</title>
+</head>
+
+<body>
+  <main>
+
+    <a id="oauth" href="#">Login</a>
+
+  </main>
+
+  <script>
+    let code_verifier = base64.encode('davidbowie')
+    let URL = "https://accounts.spotify.com/authorize";
+
+    let options = {
+      client_id: 'da7118dccd3744d48edd591b05e5fdd7',
+      response_type: 'code',
+      redirect_uri: 'http://localhost:3000/oauth',
+      code_challenge_method: 'S256',
+      code_challenge: code_verifier,
+      scope: 'read:user',
+      state: 'DavidBowieIsCool'
+    }
+
+    let QueryString = Object.keys(options).map((key) => {
+      return `${key}=` + encodeURIComponent(options[key]);
+    }).join("&");
+
+    let authURL = `${URL}?${QueryString}`;
+
+    let link = document.getElementById('oauth');
+    link.setAttribute('href', authURL);
+
+  </script>
+
+
+</body>
+
+</html>
