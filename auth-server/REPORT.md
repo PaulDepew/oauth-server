@@ -38,7 +38,7 @@ There is not an active community supporting this unfortunately as Spotify wants 
 * [examples/tutorials](http://xyz.com)
 
 ### Code Demos
-* [live/running application](http://xyz.com)
+* [live/running application](https://test-spotify-oauth.herokuapp.com/)
 * [code repository](https://github.com/PaulDepew/oauth-server)
 
 ### Operating Instructions
